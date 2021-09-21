@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "game-over-47e6f": {
+      "hosting": {
+        "game-over": [
+          "game-over-47e6f"
+        ]
+      }
+    }
+  }
+}

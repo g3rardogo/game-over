@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: 'AIzaSyAspUTylu_u8FvkpMXw9yEsVibW3BOOgIY',
+    authDomain: 'game-over-47e6f.firebaseapp.com',
+    databaseURL: 'https://game-over-47e6f-default-rtdb.firebaseio.com',
+    projectId: 'game-over-47e6f',
+    storageBucket: 'game-over-47e6f.appspot.com',
+    messagingSenderId: '851571700284',
+    appId: '1:851571700284:web:45a4764bcd8a76dbb20939',
+    measurementId: 'G-0XYK9T4KS5',
+  },
 };
 
 /*
