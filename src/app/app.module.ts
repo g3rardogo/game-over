@@ -1,3 +1,4 @@
+import { GameService } from './services/game.service';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { NgModule } from '@angular/core';
@@ -15,7 +16,7 @@ import { AppComponent } from './app.component';
     AngularFireDatabaseModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [GameService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
