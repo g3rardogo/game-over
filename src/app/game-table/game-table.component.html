@@ -1,0 +1,41 @@
+<section>
+  <h1>Games</h1>
+  <div class="container">
+    <div class="interior">
+      <a class="btn" (click)="newGame()">New Game</a>
+    </div>
+  </div>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Year</th>
+          <th>Genre</th>
+          <th>Studio</th>
+          <th>Released</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content-player">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        <tr *ngFor="let game of games$ | async">
+          <th>{{ game.name }}</th>
+          <th>{{ game.description }}</th>
+          <th>{{ game.year }}</th>
+          <th>{{ game.genre }}</th>
+          <th>{{ game.studio }}</th>
+          <th>{{ game.released }}</th>
+          <th>
+            <button>Edit</button>
+            <button>Delete</button>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

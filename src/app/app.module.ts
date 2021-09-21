@@ -10,9 +10,10 @@ import { LibraryService } from './services/library.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LibraryTableComponent } from './library-table/library-table.component';
+import { GameTableComponent } from './game-table/game-table.component';
 
 @NgModule({
-  declarations: [AppComponent, LibraryTableComponent],
+  declarations: [AppComponent, LibraryTableComponent, GameTableComponent],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
