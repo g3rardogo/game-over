@@ -11,9 +11,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LibraryTableComponent } from './library-table/library-table.component';
 import { GameTableComponent } from './game-table/game-table.component';
+import { GameDialogComponent } from './game-dialog/game-dialog.component';
 
 @NgModule({
-  declarations: [AppComponent, LibraryTableComponent, GameTableComponent],
+  declarations: [AppComponent, LibraryTableComponent, GameTableComponent, GameDialogComponent],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),

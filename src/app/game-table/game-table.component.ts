@@ -11,9 +11,19 @@ import { Game } from '../interfaces/game';
 export class GameTableComponent implements OnInit {
   public games$!: Observable<Game[]>;
   public selectedGame!: Game;
+  public showModal = false;
+
   constructor(private gameService: GameService) {}
 
   ngOnInit(): void {
     this.games$ = this.gameService.getGames();
+  }
+
+  newGame() {
+    this.showModal = true;
+    this.selectedGame = null!;
+    setTimeout(() => {
+      window.location.replace('#open');
+    }, 0);
   }
 }
