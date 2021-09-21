@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Library } from '../interfaces/library';
 
-export const LibrariesTableHeaders = ['name', 'description', 'games'];
+export const LibrariesTableHeaders = ['Name', 'Description', 'Games'];
 
 @Injectable({
   providedIn: 'root',
