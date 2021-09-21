@@ -1,6 +1,6 @@
 import { Game } from './game';
 
-export interface library {
+export interface Library {
   $key?: string;
   name: string;
   description: string;
