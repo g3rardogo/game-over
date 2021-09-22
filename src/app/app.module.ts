@@ -12,11 +12,18 @@ import { AppComponent } from './app.component';
 import { LibraryTableComponent } from './library-table/library-table.component';
 import { GameTableComponent } from './game-table/game-table.component';
 import { GameDialogComponent } from './game-dialog/game-dialog.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, LibraryTableComponent, GameTableComponent, GameDialogComponent],
+  declarations: [
+    AppComponent,
+    LibraryTableComponent,
+    GameTableComponent,
+    GameDialogComponent,
+  ],
   imports: [
     BrowserModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AppRoutingModule,

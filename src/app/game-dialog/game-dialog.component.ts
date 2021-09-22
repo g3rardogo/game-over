@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { take } from 'rxjs/operators';
 import { Game, GameStudies } from '../interfaces/game';
 import { Library } from '../interfaces/library';
@@ -12,9 +13,13 @@ import { LibraryService } from '../services/library.service';
 })
 export class GameDialogComponent implements OnInit {
   private library: any;
-  public gameStudies = Object.keys(GameStudies).slice(
-    Object.keys(GameStudies).length / 2
-  );
+  public game: any;
+  public gameStudies = Object.keys(GameStudies)
+    .slice(Object.keys(GameStudies).length / 2)
+    .map((key) => ({
+      label: key,
+      key: GameStudies[key as any],
+    }));
 
   constructor(
     private gameService: GameService,
@@ -51,5 +56,15 @@ export class GameDialogComponent implements OnInit {
       ],
     };
     this.libraryService.editLibrary(formattedTeam);
+  }
+
+  onSubmit(gameForm: NgForm) {
+    const gameFormValue = { ...gameForm.value };
+    if (gameForm.valid) {
+      gameFormValue.released =
+        gameFormValue.released === '' ? false : gameFormValue.released;
+    }
+    this.newGame(gameFormValue);
+    window.location.replace('#');
   }
 }

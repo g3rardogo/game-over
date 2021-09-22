@@ -23,7 +23,7 @@ export class GameTableComponent implements OnInit {
     this.showModal = true;
     this.selectedGame = null!;
     setTimeout(() => {
-      window.location.replace('#open');
+      window.location.replace('#open-modal');
     }, 0);
   }
 }

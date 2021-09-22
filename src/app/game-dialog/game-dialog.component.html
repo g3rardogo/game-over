@@ -1,1 +1,87 @@
-<p>game-dialog works!</p>
+<div id="open-modal" class="modal-window">
+  <div>
+    <a href="#" title="Close" class="modal-close">Close</a>
+    <h1>New Game Form</h1>
+    <div>
+      <form #gameForm="ngForm" novalidate (ngSubmit)="onSubmit(gameForm)">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            (ngModel)="(game?.name)"
+            ngModel
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            name="description"
+            (ngModel)="(game?.description)"
+            ngModel
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="year">Year</label>
+          <input
+            type="text"
+            class="form-control"
+            name="year"
+            (ngModel)="(game?.year)"
+            ngModel
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="genre">Genre</label>
+          <input
+            type="text"
+            class="form-control"
+            name="genre"
+            (ngModel)="(game?.genre)"
+            ngModel
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="studio">Studio</label>
+          <select
+            class="form-control"
+            name="studio"
+            (ngModel)="(game?.studio)"
+            ngModel
+            required
+          >
+            <option *ngFor="let studio of gameStudies" [value]="studio.key">
+              {{ studio.label }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="released">Released</label>
+          <input
+            type="checkbox"
+            class="form-control checkbox"
+            name="released"
+            (ngModel)="(game?.released)"
+            ngModel
+            required
+          />
+        </div>
+        <div class="submit-container">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
