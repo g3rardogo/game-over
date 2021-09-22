@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { take } from 'rxjs/operators';
 import { Game, GameStudies } from '../interfaces/game';
@@ -12,6 +12,7 @@ import { LibraryService } from '../services/library.service';
   styleUrls: ['./game-dialog.component.scss'],
 })
 export class GameDialogComponent implements OnInit {
+  @Output() closeDialog: EventEmitter<boolean> = new EventEmitter();
   private library: any;
   public game: any;
   public gameStudies = Object.keys(GameStudies)
@@ -66,5 +67,9 @@ export class GameDialogComponent implements OnInit {
     }
     this.newGame(gameFormValue);
     window.location.replace('#');
+  }
+
+  onClose() {
+    this.closeDialog.emit(true);
   }
 }

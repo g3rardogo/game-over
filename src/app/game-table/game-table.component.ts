@@ -26,4 +26,8 @@ export class GameTableComponent implements OnInit {
       window.location.replace('#open-modal');
     }, 0);
   }
+
+  closeDialog() {
+    this.showModal = false;
+  }
 }
